@@ -11,6 +11,8 @@ import { DinnersModule } from './dinners/dinners.module';
 import { ShopingModule } from './shoping/shoping.module';
 import { NavComponent } from './components/nav/nav.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { MainContainerComponent } from './components/main-container/main-container.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { LayoutComponent } from './components/layout/layout.component';
     NavComponent,
     NavComponent,
     LayoutComponent,
+    MainContainerComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,

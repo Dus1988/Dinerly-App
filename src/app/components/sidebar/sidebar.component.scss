@@ -1,0 +1,37 @@
+:host {
+  height: 100%;
+
+  .sidebar {
+    -webkit-box-shadow: inset 0px 24px 11px -26px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 24px 11px -26px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 24px 11px -26px rgba(0,0,0,0.75);
+    background: teal;
+    color: #ddd;
+
+    .nav-item {
+      white-space: nowrap;
+      border-bottom: 1px solid rgba(221, 221, 221, 0.335);
+      transition: background 0.3s ease-in-out;
+      text-transform: uppercase;
+
+
+      &:hover {
+        background: rgb(28, 148, 148);
+      }
+
+      &.active {
+        background: rgb(26, 33, 90);
+        color: teal;
+      }
+
+      &:last-of-type {
+        border-bottom: none;
+      }
+
+      &:focus,
+      &:active {
+        outline: none;
+      }
+    }
+  }
+}

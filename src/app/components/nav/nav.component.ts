@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { SidebarService } from '../sidebar/services/sidebar-service.service';
 
 @Component({
-  // tslint:disable-next-line: component-selector
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  constructor(public sideBarService: SidebarService) { }
 
   ngOnInit() {
   }

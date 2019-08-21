@@ -1,0 +1,14 @@
+<div class="sidebar h-100 pt-3 pb-3" [class.open]='open'>
+    <div *ngFor="let item of navItems"
+    class="nav-item pointer w-100 d-flex align-items-center justify-content-center pr-3 pl-3 pt-2 pb-2"
+    [class.active]="true === false"
+    [routerLink]='[item.route]'
+    routerLinkActive='active'
+    [routerLinkActiveOptions]="{exact: true}"
+    [attr.data-label]="item.label">
+      <div [class.mr-2]="open">
+        <i [ngClass]='item.icon'></i>
+      </div>
+      <div class='w-100' *ngIf="open">{{item.label}}</div>
+    </div>
+</div>
