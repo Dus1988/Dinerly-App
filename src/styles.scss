@@ -1,1 +1,23 @@
+
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body {
+  margin: 0!important;
+  font-family: 'Josefin Sans', 'Helvetica', 'Arial', sans-serif;;
+  font-size: 18px;
+}
+
+html,
+body,
+app-root {
+  height: 100%;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.cursor-defualt {
+  cursor: default;
+}
