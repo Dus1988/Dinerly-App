@@ -30,8 +30,8 @@ export class SidebarComponent implements OnInit, OnDestroy {
   ngOnInit() {
     let sub = this.service.toggleSideBar.pipe(debounceTime(200)).subscribe(() => this.toggleSidebar());
     this.subs.push(sub);
-    debugger;
-    this.route;
+    // debugger;
+    // this.route;
   }
 
   public configureNav(): void {
