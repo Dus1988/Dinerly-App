@@ -1,4 +1,24 @@
-<app-toolbar></app-toolbar>
-<p>
-  dinners works!
-</p>
+<!-- <app-toolbar [title]="displayWeek"></app-toolbar> -->
+<div class='d-flex flex-column h-100 w-100'>
+  <app-toolbar [title]="displayWeek"></app-toolbar>
+  <div class='h-100 days-container pt-3 pb-3'>
+    <ng-container *ngFor="let day of week.days">
+      <div class="day w-100 pb-3 pt-3 d-flex align-items-center">
+        <div class="date pr-3">
+          <div class="day-of-week">{{day.date.format('dddd')}}</div>
+          <div>{{day.date.format('MM/DD/YY')}}</div>
+        </div>
+        <div class="meals pl-3">
+          <ng-container *ngIf="day.meals.length === 0; else Meals">
+            No Meals Added
+          </ng-container>
+          <ng-template #Meals>
+            <ng-container *ngFor="let meal of day.meals">
+              <div>{{meal.description}}</div>
+            </ng-container>
+          </ng-template>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

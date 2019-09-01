@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { ShopingRoutingModule } from './shoping-routing.module';
 import { ShopingComponent } from './components/shoping/shoping.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [ShopingComponent],
   imports: [
     CommonModule,
-    ShopingRoutingModule
+    ShopingRoutingModule,
+    SharedModule
   ]
 })
 export class ShopingModule { }
