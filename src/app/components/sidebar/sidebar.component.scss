@@ -1,3 +1,4 @@
+@import '../../GlobalStyles/variables';
 :host {
   height: 100%;
 
@@ -5,8 +6,8 @@
     -webkit-box-shadow: inset 0px 24px 11px -26px rgba(0,0,0,0.75);
     -moz-box-shadow: inset 0px 24px 11px -26px rgba(0,0,0,0.75);
     box-shadow: inset 0px 24px 11px -26px rgba(0,0,0,0.75);
-    background: teal;
-    color: #f8f8f8;
+    background: $teal;
+    color: $white;
     overflow: auto;
 
     .nav-item {
@@ -17,12 +18,12 @@
 
 
       &:hover {
-        background: rgb(28, 148, 148);
+        background: $lightTeal;
       }
 
       &.active {
-        background: rgb(26, 33, 90);
-        color: teal;
+        background: $navy;
+        color: $teal;
       }
 
       &:last-of-type {

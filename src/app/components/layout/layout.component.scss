@@ -1,5 +1,7 @@
+// @import "variables";
+@import '../../GlobalStyles/variables';
 :host {
   height: 100%;
-  background: #f8f8f8;
-  color: #333;
+  background: $white;
+  color: $drkGray;
 }
