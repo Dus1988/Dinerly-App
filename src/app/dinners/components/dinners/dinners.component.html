@@ -4,7 +4,7 @@
   <div class='h-100 days-container pt-3 pb-3'>
     <ng-container *ngFor="let day of week.days">
       <div class="day w-100 pb-3 pt-3 d-flex align-items-center">
-        <div class="date h-100 pr-3">
+        <div class="date pr-3 align-self-stretch d-flex flex-column justify-content-center">
           <div class="day-of-week">{{day.date.format('ddd')}}</div>
           <div>{{day.date.format('MM/DD/YY')}}</div>
         </div>
@@ -13,8 +13,10 @@
             No Meals Added
           </ng-container>
           <ng-template #Meals>
-            <ng-container *ngFor="let meal of day.meals">
-              <div class="meal">{{meal.description}}</div>
+            <ng-container *ngFor="let meal of day.meals; let idx = index">
+              <div class="meal">
+                <strong *ngIf="day.meals.length > 1 && meal.mealType" class='mr-2'>{{meal.mealType}}</strong>{{meal.description}}
+              </div>
             </ng-container>
           </ng-template>
         </div>
