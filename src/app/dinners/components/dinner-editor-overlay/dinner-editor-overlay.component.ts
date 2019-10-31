@@ -9,15 +9,19 @@ import { Day } from '../../Models/day';
 export class DinnerEditorOverlayComponent implements OnInit {
 
   @Input()
-  Day: Day;
+  public Day: Day;
   @Output()
-  OverlayClosed: EventEmitter<any>;
+  public OverlayClosed: EventEmitter<any>;
+
+  public headerContent: string;
 
   constructor() {
     this.OverlayClosed = new EventEmitter();
   }
 
   ngOnInit() {
+    // debugger;
+    this.headerContent = this.Day.date.format('ddd | MM-DD-YYYY');
   }
 
   close() {

@@ -1,4 +1,4 @@
-import { Component, OnInit, ContentChild, TemplateRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ContentChild, TemplateRef, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'generic-overlay',
@@ -9,6 +9,8 @@ export class GenericOverlayComponent implements OnInit {
 
   @ContentChild('body') public bodyTemplate: TemplateRef<any>;
   public open: boolean;
+  @Input()
+  header: string;
   @Output()
   OverlayClosed: EventEmitter<any>;
 

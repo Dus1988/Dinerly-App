@@ -1,1 +1,3 @@
-<generic-overlay *ngIf="Day" (OverlayClosed)="close()"></generic-overlay>
+<generic-overlay *ngIf="Day" [header]="headerContent" (OverlayClosed)="close()">
+  <ng-template #body>Number of meals: {{Day.meals.length}}</ng-template>
+</generic-overlay>
