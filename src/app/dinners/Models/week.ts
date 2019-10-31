@@ -13,7 +13,7 @@ export class Week implements IWeek {
   public days: Array<Day>;
 
   constructor(options?: IWeek) {
-    this.startDate =  moment();
+    this.startDate =  moment().startOf('week');
     this.days = [];
     if (options) {
       CopyUtil.copyProps(options, this);
