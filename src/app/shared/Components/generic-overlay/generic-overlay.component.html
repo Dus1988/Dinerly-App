@@ -1,0 +1,19 @@
+<div class="generic-overlay h-100 w-100 d-flex flex-column">
+  <div class="head p-3 d-flex align-items-center justify-content-end">
+    <h1 class="w-100">HEADER</h1>
+    <div (click)="closeOverlay()">X</div>
+  </div>
+  <div class="body w-100 h-100 d-flex justify-content-center">
+    <ng-container *ngIf="bodyTemplate; else NoBodyTemplate">
+      <ng-container *ngTemplateOutlet="bodyTemplate"></ng-container>
+    </ng-container>
+    <ng-template #NoBodyTemplate>
+      <div class="">
+        NO BODY TEMPLATE PROVIDED
+      </div>
+    </ng-template>
+  </div>
+</div>
+
+
+

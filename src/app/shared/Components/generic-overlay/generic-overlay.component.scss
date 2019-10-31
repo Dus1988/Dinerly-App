@@ -1,0 +1,20 @@
+@import "../../../GlobalStyles/variables";
+:host {
+  position: fixed;
+  top: 0;
+  left: 100vw;
+  display: flex;
+  width: 100vw;
+  height: 100vw;
+
+
+
+  .generic-overlay {
+    background: $white;
+
+    .head {}
+
+    .body {
+    }
+  }
+}
