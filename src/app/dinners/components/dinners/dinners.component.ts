@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Week } from '../../Models/week';
 import { Meal } from '../../Models/meal';
 import { MealTypes } from '../enums/meal-types.enum';
+import { Day } from '../../Models/day';
 
 @Component({
   selector: 'app-dinners',
@@ -12,6 +13,7 @@ export class DinnersComponent implements OnInit {
 
   week: Week;
   displayWeek: string;
+  activeDay: Day;
 
   constructor() {
     this.week = new Week();
@@ -26,6 +28,10 @@ export class DinnersComponent implements OnInit {
       new Meal({description: 'Tacos'}),
     ]);
     this.displayWeek = `${this.week.startDate.format('MM/DD/YY')} - ${this.week.days[6].date.format('MM/DD/YY')}`;
+  }
+
+  editDay(day: Day) {
+    this.activeDay = day;
   }
 
   ngOnInit() {

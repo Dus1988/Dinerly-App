@@ -1,4 +1,4 @@
-<div class="generic-overlay h-100 w-100 d-flex flex-column">
+<div class="generic-overlay h-100 w-100 d-flex flex-column" [ngClass]="{'open': open}">
   <div class="head p-3 d-flex align-items-center justify-content-end">
     <h1 class="w-100">HEADER</h1>
     <div (click)="closeOverlay()">X</div>

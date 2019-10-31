@@ -5,7 +5,7 @@
     <ng-container *ngFor="let day of week.days">
       <div class="day w-100 pb-3 pt-3 d-flex align-items-center">
         <div class="date pr-3 align-self-stretch d-flex flex-column justify-content-center">
-          <div class="day-of-week pointer">
+          <div class="day-of-week pointer" (click)="editDay(day)">
               <div class="mb-2"><i class="fas fa-edit"></i></div>
               {{day.date.format('ddd')}}
           </div>
@@ -30,4 +30,4 @@
     </ng-container>
   </div>
 </div>
-<dinner-editor-overlay></dinner-editor-overlay>
+<dinner-editor-overlay *ngIf="activeDay" [Day]="activeDay" (OverlayClosed)="activeDay = null"></dinner-editor-overlay>

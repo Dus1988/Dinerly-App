@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Day } from '../../Models/day';
 
 @Component({
   selector: 'dinner-editor-overlay',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DinnerEditorOverlayComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  Day: Day;
+  @Output()
+  OverlayClosed: EventEmitter<any>;
+
+  constructor() {
+    this.OverlayClosed = new EventEmitter();
+  }
 
   ngOnInit() {
+  }
+
+  close() {
+    this.OverlayClosed.emit();
   }
 
 }
