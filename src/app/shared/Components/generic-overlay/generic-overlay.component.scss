@@ -1,6 +1,7 @@
 @import "../../../GlobalStyles/variables";
 :host {
 
+
   // background: rgba(0,0,0, 0.3);
   &:before {
     content: '';
@@ -9,9 +10,9 @@
     left: 0;
     height: 100vh;
     width: 100vw;
-    background: $drkGray;
     opacity: 0.7;
-    animation: overlayBgFade 300ms ease-in-out 0 1 normal forwards;
+    background: $drkGray;
+    animation: overlayBgFade 250ms ease-in-out 0ms 1 normal forwards;
   }
 
   .generic-overlay {
@@ -55,6 +56,6 @@
 }
 
 @keyframes overlayBgFade {
-  from {opacity: 0;}
-  to {opacity: 0.7;}
+  from {opacity: 0};
+  to {opacity: 0.7};
 }
