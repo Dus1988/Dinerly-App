@@ -36,11 +36,11 @@ export class SidebarComponent implements OnInit, OnDestroy {
 
   public configureNav(): void {
     this.navItems = [
-      new NavItem({
-        icon: 'fas fa-home',
-        label: 'Home',
-        route: '/'
-      }),
+      // new NavItem({
+      //   icon: 'fas fa-home',
+      //   label: 'Home',
+      //   route: '/'
+      // }),
       new NavItem({
         icon: 'fas fa-utensils',
         label: 'Dinners',
