@@ -8,7 +8,8 @@
     box-shadow: inset 0px 24px 11px -26px rgba(0,0,0,0.75);
     background: $teal;
     color: $white;
-    overflow: auto;
+    overflow: hidden auto;
+    transition: width 100ms ease-in-out;
 
     .nav-item {
       white-space: nowrap;
