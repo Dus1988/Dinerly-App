@@ -3,6 +3,7 @@ import { Week } from '../../Models/week';
 import { Meal } from '../../Models/meal';
 import { MealTypes } from '../enums/meal-types.enum';
 import { Day } from '../../Models/day';
+import { IToolbarAction } from 'src/app/shared/Components/toolbar/models/itoolbar-action';
 
 @Component({
   selector: 'app-dinners',
@@ -12,10 +13,24 @@ import { Day } from '../../Models/day';
 export class DinnersComponent implements OnInit {
 
   week: Week;
+  weekModifier;
   displayWeek: string;
   activeDay: Day;
 
+  actions: Array<IToolbarAction>;
+
   constructor() {
+    this.actions = [
+      {
+        ActionName: 'Previous Week',
+        ActionIcon: 'fas fa-chevron-left',
+      },
+      {
+        ActionName: 'Next Week',
+        ActionIcon: 'fas fa-chevron-right'
+      }
+    ];
+    this.weekModifier = 0;
     this.week = new Week();
     this.week.days[0].meals.push(...[
       new Meal({description: 'Panda Express', mealType: MealTypes.Lunch}),

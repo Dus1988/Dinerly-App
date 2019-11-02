@@ -1,5 +1,23 @@
 <section class="toolbar">
   <div class='action-bar d-flex '>
     <h4 class="w-100">{{title}}</h4>
+    <ng-container *ngIf="actions && actions.length !== -1">
+      <div class="actions d-flex align-items-center justify-content-end">
+        <ng-container *ngFor="let action of actions">
+          <div class="action ml-3 pointer">
+            <ng-container *ngIf="action.ActionIcon; else noIcon">
+                <i class="{{action.ActionIcon}}" matTooltip="{{action.ActionName}}"
+                [matTooltipPosition]="'below'" [ngStyle]="{'color': action.ActionColor ? action.ActionColor : ''}"></i>
+            </ng-container>
+            <ng-template #noIcon>
+                <i class="fab fa-500px" matTooltip="Icon Not Configured Properly"
+                [matTooltipPosition]="'below'"></i>
+            </ng-template>
+          </div>
+        </ng-container>
+
+      </div>
+    </ng-container>
+
   </div>
 </section>

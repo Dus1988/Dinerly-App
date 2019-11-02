@@ -12,7 +12,8 @@ export class ToolbarComponent implements OnInit {
   @Input()
   title: string;
 
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit() {
   }
