@@ -1,10 +1,10 @@
-<div class="generic-overlay h-100 w-100 d-flex flex-column" [ngClass]="{'open': open}">
+<div class="generic-overlay h-100 w-100 d-flex flex-column" [ngClass]="{'open': open, 'closing': closing}">
   <div class="head p-3 d-flex align-items-center justify-content-end">
-    <h1 class="w-100">
+    <h2 class="w-100">
       <ng-container *ngIf="header; else NoHeader">{{header}}</ng-container>
       <ng-template #NoHeader>Header Not Provided</ng-template>
-    </h1>
-    <div (click)="closeOverlay()">X</div>
+    </h2>
+    <div class="close align-self-start pointer" (click)="closeOverlay()"><i class="far fa-times-circle fa-md"></i></div>
   </div>
   <div class="body w-100 h-100 d-flex justify-content-center">
     <ng-container *ngIf="bodyTemplate; else NoBodyTemplate">

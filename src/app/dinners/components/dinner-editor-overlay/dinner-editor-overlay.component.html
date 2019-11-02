@@ -1,3 +1,9 @@
 <generic-overlay *ngIf="Day" [header]="headerContent" (OverlayClosed)="close()">
-  <ng-template #body>Number of meals: {{Day.meals.length}}</ng-template>
+  <ng-template #body>
+    <div class="w-100">
+        <ng-container *ngFor="let meal of Day.meals">
+          <div class="p-3">{{meal.mealType}} | {{meal.description}}</div>
+        </ng-container>
+    </div>
+  </ng-template>
 </generic-overlay>
