@@ -3,7 +3,7 @@
     <div class="w-100 p-3 mt-2">
         <app-toolbar [actions]="actions" (ActionClicked)="performAction($event)"></app-toolbar>
         <mat-accordion>
-            <ng-container *ngFor="let meal of Day.meals">
+            <ng-container *ngFor="let meal of meals">
                 <!-- <div class="p-3">{{meal.mealType}} | {{meal.description}}</div> -->
                 <mat-expansion-panel>
                     <mat-expansion-panel-header>

@@ -9,8 +9,14 @@ export class CopyUtil {
     // }
   }
 
-  deepCopy(source: Object, dest: Object): Object {
-    dest = JSON.parse(JSON.stringify(source));
-    return dest;
+  public static deepCopy(source: Object, dest?: Object): any {
+
+    if (dest) {
+      dest = JSON.parse(JSON.stringify(source));
+      return dest;
+    } else {
+      return JSON.parse(JSON.stringify(source));
+    }
+
   }
 }

@@ -3,6 +3,7 @@ import { Day } from '../../Models/day';
 import { IToolbarAction } from 'src/app/shared/Components/toolbar/models/itoolbar-action';
 import { MealTypes } from '../enums/meal-types.enum';
 import { Meal } from '../../Models/meal';
+import { CopyUtil } from './../../../shared/utils/copy-util';
 
 @Component({
   selector: 'dinner-editor-overlay',
@@ -18,6 +19,8 @@ export class DinnerEditorOverlayComponent implements OnInit {
 
   public headerContent: string;
   public actions: Array<IToolbarAction>;
+
+  public meals: Array<Meal>;
 
   _MealTypes = MealTypes;
 
@@ -40,15 +43,16 @@ export class DinnerEditorOverlayComponent implements OnInit {
   ngOnInit() {
     // debugger;
     this.headerContent = this.Day.date.format('ddd | MM-DD-YYYY');
+    this.meals = CopyUtil.deepCopy(this.Day.meals);
   }
 
   addDay() {
     const meal = new Meal();
-    this.Day.meals.push(meal);
+    this.meals.push(meal);
   }
 
   resetDay() {
-    this.Day.meals = [];
+    this.meals = [];
   }
 
   performAction(action: IToolbarAction) {
@@ -56,6 +60,7 @@ export class DinnerEditorOverlayComponent implements OnInit {
   }
 
   close() {
+    this.Day.meals = this.meals;
     this.OverlayClosed.emit();
   }
 
