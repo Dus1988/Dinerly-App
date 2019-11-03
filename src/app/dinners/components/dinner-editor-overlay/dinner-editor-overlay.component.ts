@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Day } from '../../Models/day';
 import { IToolbarAction } from 'src/app/shared/Components/toolbar/models/itoolbar-action';
 import { MealTypes } from '../enums/meal-types.enum';
+import { Meal } from '../../Models/meal';
 
 @Component({
   selector: 'dinner-editor-overlay',
@@ -24,11 +25,13 @@ export class DinnerEditorOverlayComponent implements OnInit {
     this.actions = [
       {
         ActionName: 'Add Meal',
-        ActionIcon: 'fas fa-plus-circle fa-lg mb-3'
+        ActionIcon: 'fas fa-plus-circle fa-lg mb-3',
+        ActionFn: () => this.addDay(),
       },
       {
         ActionName: "Reset Day's meals",
-        ActionIcon: 'fas fa-trash -fa-lg mb-3'
+        ActionIcon: 'fas fa-trash -fa-lg mb-3',
+        ActionFn: () => this.resetDay()
       }
     ];
     this.OverlayClosed = new EventEmitter();
@@ -37,6 +40,19 @@ export class DinnerEditorOverlayComponent implements OnInit {
   ngOnInit() {
     // debugger;
     this.headerContent = this.Day.date.format('ddd | MM-DD-YYYY');
+  }
+
+  addDay() {
+    const meal = new Meal();
+    this.Day.meals.push(meal);
+  }
+
+  resetDay() {
+    this.Day.meals = [];
+  }
+
+  performAction(action: IToolbarAction) {
+    action.ActionFn();
   }
 
   close() {

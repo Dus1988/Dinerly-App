@@ -33,25 +33,25 @@ export class DinnersComponent implements OnInit {
     this.weekModifier = 0;
     this.week = new Week();
     this.week.days[0].meals.push(...[
-      new Meal({description: 'Red Baron Pizza'}),
+      new Meal({description: 'Red Baron Pizza', mealType: MealTypes.Dinner}),
     ]);
     this.week.days[1].meals.push(...[
-      new Meal({description: 'Chicken + Asparagus + Potatoes'}),
+      new Meal({description: 'Chicken + Asparagus + Potatoes', mealType: MealTypes.Dinner}),
     ]);
     this.week.days[2].meals.push(...[
-      new Meal({description: 'Hot Dogs & Mac'}),
+      new Meal({description: 'Hot Dogs & Mac', mealType: MealTypes.Dinner}),
     ]);
     this.week.days[3].meals.push(...[
-      new Meal({description: 'Pot Pies'}),
+      new Meal({description: 'Pot Pies', mealType: MealTypes.Dinner}),
     ]);
     this.week.days[4].meals.push(...[
-      new Meal({description: 'Meat Loaf, Mashed Potatoes and Carrots'}),
+      new Meal({description: 'Meat Loaf, Mashed Potatoes and Carrots', mealType: MealTypes.Dinner}),
     ]);
     this.week.days[5].meals.push(...[
-      new Meal({description: 'D&D (Pizza?)'}),
+      new Meal({description: 'D&D (Pizza?)', mealType: MealTypes.Dinner}),
     ]);
     this.week.days[6].meals.push(...[
-      new Meal({description: '????'}),
+      new Meal({description: '????', mealType: MealTypes.Dinner}),
     ]);
     this.displayWeek = `${this.week.startDate.format('MM/DD/YY')} - ${this.week.days[6].date.format('MM/DD/YY')}`;
   }

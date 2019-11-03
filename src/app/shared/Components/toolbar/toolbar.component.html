@@ -7,7 +7,8 @@
           <div class="action ml-3 pointer">
             <ng-container *ngIf="action.ActionIcon; else noIcon">
                 <i class="{{action.ActionIcon}}" matTooltip="{{action.ActionName}}"
-                [matTooltipPosition]="'below'" [ngStyle]="{'color': action.ActionColor ? action.ActionColor : ''}"></i>
+                [matTooltipPosition]="'below'" [ngStyle]="{'color': action.ActionColor ? action.ActionColor : ''}"
+                (click)="clickAction(action)"></i>
             </ng-container>
             <ng-template #noIcon>
                 <i class="fab fa-500px" matTooltip="Icon Not Configured Properly"

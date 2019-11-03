@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { IToolbarAction } from './models/itoolbar-action';
 
 @Component({
   selector: 'app-toolbar',
@@ -8,14 +9,22 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ToolbarComponent implements OnInit {
 
   @Input()
-  actions: Array<any>;
+  actions: Array<IToolbarAction>;
   @Input()
   title: string;
 
+  @Output()
+  ActionClicked: EventEmitter<IToolbarAction>;
+
   constructor() {
+    this.ActionClicked = new EventEmitter();
    }
 
   ngOnInit() {
+  }
+
+  clickAction(action: IToolbarAction) {
+    this.ActionClicked.emit(action);
   }
 
 }

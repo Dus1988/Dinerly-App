@@ -14,7 +14,7 @@ export class Meal implements IMeal {
 
   constructor(options?: IMeal) {
     this.description = '';
-    this.mealType = MealTypes.Dinner;
+    this.mealType = '';
     if (options) {
       CopyUtil.copyProps(options, this);
     }
