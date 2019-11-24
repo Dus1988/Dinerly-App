@@ -60,6 +60,11 @@ export class DinnerEditorOverlayComponent implements OnInit {
   }
 
   close() {
+    this.meals = this.meals.sort((a,b) => {
+      if (a.mealType === MealTypes.Breakfast ) {
+        return -1;
+      }
+    });
     this.Day.meals = this.meals;
     this.OverlayClosed.emit();
   }
