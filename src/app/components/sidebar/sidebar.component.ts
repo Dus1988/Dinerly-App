@@ -51,6 +51,11 @@ export class SidebarComponent implements OnInit, OnDestroy {
         label: 'Shopping',
         route: '/shopping'
       }),
+      new NavItem({
+        icon: 'fas fa-clipboard-list',
+        label: 'Inventory',
+        route: '/inventory',
+      })
     ];
   }
 
