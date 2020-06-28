@@ -24,6 +24,7 @@
     "@angular/router": "~7.0.0",
     "@ng-bootstrap/ng-bootstrap": "^5.1.2",
     "bootstrap": "^4.3.1",
+    "compodoc": "0.0.41",
     "core-js": "^2.5.4",
     "moment": "^2.24.0",
     "node-sass": "^4.13.0",
