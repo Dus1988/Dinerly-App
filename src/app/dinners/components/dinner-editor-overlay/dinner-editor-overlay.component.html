@@ -1,3 +1,49 @@
 <generic-overlay *ngIf="Day" [header]="headerContent" (OverlayClosed)="close()">
-  <ng-template #body>Number of meals: {{Day.meals.length}}</ng-template>
+  <ng-template #body>
+    <div class="w-100 p-3 mt-2">
+        <app-toolbar [actions]="actions" (ActionClicked)="performAction($event)"></app-toolbar>
+        <mat-accordion>
+            <ng-container *ngFor="let meal of meals">
+                <!-- <div class="p-3">{{meal.mealType}} | {{meal.description}}</div> -->
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title><h4 class="mb-2 mt-2">{{meal.mealType ? meal.mealType : '?'}} | {{meal.description ? meal.description : '???'}}</h4></mat-panel-title>
+                        <!-- <mat-panel-description *ngIf="meal."></mat-panel-description> -->
+                    </mat-expansion-panel-header>
+                    <div class="meal-editor row">
+                      <div class="meal-name col-12 col-md-6 col-lg-4">
+                        <h6>Meal Details</h6>
+                        <form class="row">
+                          <div class="form-group col-12 col-md-4">
+                            <label>Meal Type</label>
+                            <select class="form-control" name="MealType" required [(ngModel)]="meal.mealType">
+                              <option value="B">
+                                Breakfast
+                              </option>
+                              <option value="L">
+                                Lunch
+                              </option>
+                              <option value="D">
+                                Dinner
+                              </option>
+                              <option value="S">
+                                Snack
+                              </option>
+                            </select>
+                          </div>
+                          <div class="form-group col-12 col-md-8">
+                            <label>Meal Name</label>
+                            <input class="form-control" required name="MealName" [(ngModel)]="meal.description" type="text"/>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="ingredients  col-12 col-md-6 col-lg-8">
+                        <h6>Meal Ingredients</h6>
+                      </div>
+                    </div>
+                </mat-expansion-panel>
+              </ng-container>
+        </mat-accordion>
+    </div>
+  </ng-template>
 </generic-overlay>

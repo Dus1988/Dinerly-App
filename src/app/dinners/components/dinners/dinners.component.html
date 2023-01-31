@@ -1,6 +1,6 @@
 <!-- <app-toolbar [title]="displayWeek"></app-toolbar> -->
 <div class='d-flex flex-column h-100 w-100'>
-  <app-toolbar [title]="displayWeek"></app-toolbar>
+  <app-toolbar [title]="displayWeek" [actions]="actions"></app-toolbar>
   <div class='h-100 days-container pt-3 pb-3'>
     <ng-container *ngFor="let day of week.days">
       <div class="day w-100 pb-3 pt-3 d-flex align-items-center">

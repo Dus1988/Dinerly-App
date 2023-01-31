@@ -1,3 +1,4 @@
+@import "../../../GlobalStyles/variables";
 .toolbar {
   width: 100%;
   height: auto;
@@ -5,5 +6,11 @@
 
   .action-bar {
     border-bottom: 1px solid #333;
+
+    .actions {
+      .action {
+        color: $teal;
+      }
+    }
   }
 }

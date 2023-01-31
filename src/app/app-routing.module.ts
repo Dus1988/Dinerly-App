@@ -4,7 +4,9 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: '../app/home/home.module#HomeModule',
+    // loadChildren: '../app/home/home.module#HomeModule',
+    redirectTo: '/dinners',
+    pathMatch: 'full',
   },
   {
     path: 'dinners',
